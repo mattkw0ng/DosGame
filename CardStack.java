@@ -8,27 +8,27 @@ import java.util.*;
 
 public class CardStack
 {
-    private ArrayList<Card> stack;
+    protected ArrayList<DosCard> stack;
 
     //-----------------------------------------------------------------
     //  Creates a full deck with the cards initially "in order".
     //-----------------------------------------------------------------
     public CardStack()
     {
-        stack = new ArrayList<Card>();
+        stack = new ArrayList<DosCard>();
     }
 
     //-----------------------------------------------------------------
     //  Adds a card to the collection.
     //-----------------------------------------------------------------
-    public void addCard(Card c)
+    public void addCard(DosCard c)
     {
         stack.add(c);
     }
     //-----------------------------------------------------------------
     //  Deals the first card from the collection.
     //-----------------------------------------------------------------
-    public Card deal()
+    public DosCard deal()
     {
         if (stack.size() > 0) {
             return stack.remove(0);
@@ -40,7 +40,7 @@ public class CardStack
     //-----------------------------------------------------------------
     //  Deals a random card from the collection.
     //-----------------------------------------------------------------
-    public Card randomDeal()
+    public DosCard randomDeal()
     {
         Random generator = new Random();
         int index = generator.nextInt(stack.size());
@@ -55,7 +55,7 @@ public class CardStack
     //-----------------------------------------------------------------
     //  Removes a card from the stack of cards.
     //-----------------------------------------------------------------
-    public boolean removeCard(Card c)
+    public boolean removeCard(DosCard c)
     {
         return stack.remove(c);
     }
@@ -63,7 +63,7 @@ public class CardStack
     //-----------------------------------------------------------------
     //  Returns the ith card from the stack of cards.
     //-----------------------------------------------------------------
-    public Card getCard(int i)
+    public DosCard getCard(int i)
     {
         if(stack.size()>i) {
             return stack.get(i);
@@ -92,11 +92,12 @@ public class CardStack
     //-----------------------------------------------------------------
     public void swap(int position1, int position2)
     {
-        Card temp;  
+        DosCard temp;
         temp = stack.get(position1);
         stack.set(position1, stack.get(position2));
         stack.set(position2, temp);
     }
+
 
     //-----------------------------------------------------------------
     //  String representation of the Stack of Cards

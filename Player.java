@@ -93,7 +93,11 @@ public class Player {
 	public void setPoints(int points)
 	{
 		this.currentPoints = points;
-		this.runningTotal+=points;
+	}
+	public void addPoints(int points)
+	{
+		this.currentPoints += points;
+		this.runningTotal +=points;
 	}
 
 	//-----------------------------------------------------------------
